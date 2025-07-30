@@ -1,0 +1,54 @@
+certbot_data/
+git.py
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# Django migrations
+*/migrations/*.pyc
+*/migrations/*.py[cod]
+*/migrations/__pycache__/
+
+# Environment files
+.env
+*.env
+
+# Virtual environments
+venv/
+env/
+.env/
+
+# Docker files
+*.log
+docker-compose.override.yml
+
+# Certbot data (do not commit cert/private keys!)
+certbot_data/
+
+# Database files
+*.sqlite3
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+*.log
+logs/
+
+# Pytest cache
+.pytest_cache/
+
+# Static and media files (optional, if generated)
+staticfiles/
+media/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
