@@ -3,15 +3,9 @@
 import os
 import sys
 
-ENV = os.getenv("DJANGO_ENV", "development")
 
 def main():
     """Run administrative tasks."""
-
-    if ENV == "production":
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mypaperhive.settings_production')
-    else:
-        os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'mypaperhive.settings_development')
 
     try:
         from django.core.management import execute_from_command_line

@@ -1,6 +1,3 @@
-import os
-from pathlib import Path
-from dotenv import load_dotenv
 
 from .settings_base import *
 
@@ -34,9 +31,6 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
-# Static files root voor collectstatic
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Database configuratie via environment variables (aanpassen voor jouw DB)
 DATABASES = {

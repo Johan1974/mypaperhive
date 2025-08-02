@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,9 +50,17 @@
       font-size: 1.2em;
       margin-right: 0.3em;
     }
+
+    /* Logo style */
+    .logo {
+      margin-bottom: 2rem;
+      max-width: 200px;
+      height: auto;
+    }
   </style>
 </head>
 <body>
+  <img src="{% static 'images/B-Organizing.png' %}" alt="PaperHive Logo" class="logo" />
   <h1><span>🐝</span> PaperHive is Coming Soon!</h1>
   <p>We're buzzing away to launch. Stay tuned for sweet updates.</p>
 </body>

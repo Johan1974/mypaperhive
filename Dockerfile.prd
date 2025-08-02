@@ -18,11 +18,12 @@ RUN pip install --upgrade pip && pip install -r requirements.txt
 # Copy project files
 COPY ./app /app
 
+# Copy your custom script that runs collectstatic + start server
+COPY ./scripts/tasks_prd.sh /app/tasks_prd.sh
+RUN chmod +x /app/tasks_prd.sh
+
 # Expose port for Gunicorn
 EXPOSE 8000
 
-# Start Gunicorn
-# 1 Worker
-# CMD ["gunicorn", "mypaperhive.wsgi:application", "--bind", "0.0.0.0:8000"]
-# 3 Workers
-CMD ["gunicorn", "mypaperhive.wsgi:application", "--workers", "3", "--bind", "0.0.0.0:8000"] 
+# Start the container by running your script
+ENTRYPOINT ["/app/tasks_prd.sh"]

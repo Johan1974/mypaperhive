@@ -1,6 +1,4 @@
-import os
-from pathlib import Path
-from dotenv import load_dotenv
+
 
 from .settings_base import *
 
@@ -41,5 +39,3 @@ SECURE_HSTS_SECONDS = 0
 SECURE_HSTS_INCLUDE_SUBDOMAINS = False
 SECURE_HSTS_PRELOAD = False
 
-# Static files directory for collectstatic
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

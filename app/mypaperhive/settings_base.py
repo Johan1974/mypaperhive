@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from dotenv import load_dotenv
 
@@ -5,6 +6,17 @@ from dotenv import load_dotenv
 load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'maintenance/static/maintenance'),
+    os.path.join(BASE_DIR, 'mypaperhive/static/mypaperhive'),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')  # for collectstatic output
+
+
 
 # Applicaties
 INSTALLED_APPS = [
@@ -63,8 +75,7 @@ TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-# Static files
-STATIC_URL = 'static/'
+
 
 # Default auto field
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
