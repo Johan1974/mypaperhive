@@ -22,4 +22,7 @@ COPY ./app /app
 EXPOSE 8000
 
 # Start Gunicorn
-CMD ["gunicorn", "mypaperhive.wsgi:application", "--bind", "0.0.0.0:8000"]
+# 1 Worker
+# CMD ["gunicorn", "mypaperhive.wsgi:application", "--bind", "0.0.0.0:8000"]
+# 3 Workers
+CMD ["gunicorn", "mypaperhive.wsgi:application", "--workers", "3", "--bind", "0.0.0.0:8000"] 

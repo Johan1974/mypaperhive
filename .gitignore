@@ -12,12 +12,15 @@ __pycache__/
 */migrations/*.py[cod]
 */migrations/__pycache__/
 
-# Environment files
+# Ignore environment files with secrets
 .env
+.env.*
 *.env
+
 
 # Virtual environments
 venv/
+.venv/
 env/
 .env/
 

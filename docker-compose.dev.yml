@@ -1,0 +1,25 @@
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    env_file:
+      - .env.development
+    depends_on:
+      - db
+    ports:
+      - "8001:8000"  # expose Django dev server
+
+  db:
+    image: postgres:15
+    restart: unless-stopped
+    env_file:
+      - .env.development
+    volumes:
+      - pgdata_dev:/var/lib/postgresql/data
+    ports:
+      - "5433:5432"  # expose Postgres op andere poort dan productie
+
+volumes:
+  pgdata_dev:
